@@ -25,7 +25,7 @@ async def get_all_users() -> List[User]:
 
 @app.post("/user", response_model=User)
 async def create_user(username: str, age: int) -> User:
-    user_id = len(users) + 1  # Используем текущее количество пользователей для ID
+    user_id = len(users) + 1   
     new_user = User(id=user_id, username=username, age=age)
     users.append(new_user)
     return new_user
